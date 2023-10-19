@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "parcial1-4f4dd": {
+      "hosting": {
+        "parcial": [
+          "parcial1-4f4dd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "parcial1-4f4dd"
+  }
+}

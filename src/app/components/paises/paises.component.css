@@ -1,0 +1,33 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .country-list-container {
+    overflow-y: scroll;
+    max-height: 400px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .country-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .country-image {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .country-list {
+    width: 100%;
+  }
+  

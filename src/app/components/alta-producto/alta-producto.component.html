@@ -1,0 +1,87 @@
+<div class="actor-alta-container">
+    <!-- Columna izquierda para los campos de entrada -->
+    <div class="left-column">
+      <h2>Alta de productos</h2>
+      <form (ngSubmit)="submitForm()" [formGroup]="regForm">
+        <div class="form-group">
+          <label for="codigo">Código:</label>
+          <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="producto.codigo" formControlName="codigo" style="width: 400px;">
+          <!-- Aquí hemos establecido un ancho de 400px para el input -->
+          <div *ngIf="regForm.controls['codigo'].errors != null">
+            <small
+            style="color: #f00"
+            *ngIf="
+              regForm.controls['codigo'].errors!['required'] &&
+              regForm.controls['codigo'].touched">              
+            El codigo es requerido
+          </small>
+          </div>
+        </div>
+        <!-- Repite el mismo estilo de ancho para otros inputs -->
+        <div class="form-group">
+          <label for="descripcion">Descripcion:</label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="producto.descripcion" formControlName="descripcion" style="width: 400px;">
+          <div *ngIf="regForm.controls['descripcion'].errors != null">
+            <small
+            style="color: #f00"
+            *ngIf="
+              regForm.controls['descripcion'].errors!['required'] &&
+              regForm.controls['descripcion'].touched">              
+            El descripcion es requerida
+          </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="precio">Precio:</label>
+          <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="producto.precio" formControlName="precio" style="width: 400px;">
+          <div *ngIf="regForm.controls['precio'].errors != null">
+            <small
+            style="color: #f00"
+            *ngIf="
+              regForm.controls['precio'].errors!['required'] &&
+              regForm.controls['precio'].touched">              
+            El precio es requerido
+          </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="stock">Stock:</label>
+          <input type="number" class="form-control" id="stock" name="stock" [(ngModel)]="producto.stock" formControlName="stock" style="width: 400px;">
+          <div *ngIf="regForm.controls['stock'].errors != null">
+            <small
+            style="color: #f00"
+            *ngIf="
+              regForm.controls['stock'].errors!['required'] &&
+              regForm.controls['stock'].touched">              
+            El capacidad de transporte es requerida
+          </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comestible">Comestible:</label>
+          <select class="form-control" id="comestible" name="comestible" [(ngModel)]="producto.comestible" formControlName="comestible" style="width: 400px;">
+            <option [ngValue]="true">Sí</option>
+            <option [ngValue]="false">No</option>
+          </select>
+          <div *ngIf="regForm.controls['comestible'].errors != null">
+              <small
+              style="color: #f00"
+              *ngIf="
+                regForm.controls['comestible'].errors!['required'] &&
+                regForm.controls['comestible'].touched">              
+                La informacion es requerida
+              </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pais">País del producto:</label>
+          <p  class="form-control" style="color: black; width: 400px">{{ selectedCountry?.name }}</p>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>    
+    <!-- Columna derecha para el componente TablaPaises -->
+    <div class="right-column">
+      <app-paises (country)="onCountrySelected($event)"></app-paises>
+    </div>
+</div>

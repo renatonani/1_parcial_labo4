@@ -1,0 +1,17 @@
+<div class="bienvenida container">
+    <h1>Página de bienvenida</h1>
+    <div *ngIf="githubUser" class="row">
+      <div class="col-md-4">
+        <img [src]="githubUser.avatar_url" alt="Avatar de GitHub" class="img-fluid rounded-circle">
+      </div>
+      <div class="col-md-8">
+        <h2 class="mt-4">Usuario de GitHub: {{ githubUser.login }}</h2>
+        <p><strong>Nombre:</strong> {{ githubUser.name }}</p>
+        <p><strong>Seguidores:</strong> {{ githubUser.followers }}</p>
+        <p><strong>Biografía:</strong> {{ githubUser.bio }}</p>
+        <p><strong>Ubicación:</strong> {{ githubUser.location }}</p>
+        <!-- Otros datos de GitHub que desees mostrar -->
+      </div>
+    </div>
+  </div>
+  
