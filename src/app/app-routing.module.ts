@@ -4,12 +4,16 @@ import { BienvenidaComponent } from './components/bienvenida/bienvenida.componen
 import { LoginComponent } from './components/login/login.component';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
 import { activateGuard } from './guards/activate.guard';
+import { BusquedaProductoComponent } from './components/busqueda-producto/busqueda-producto.component';
+import { ListadoProductoPublicoComponent } from './components/listado-producto-publico/listado-producto-publico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Ruta por defecto
   { path: 'bienvenida', component: BienvenidaComponent },
-  { path: 'producto/alta', canActivate: [activateGuard], component: AltaProductoComponent },
+  { path: 'producto/alta', component: AltaProductoComponent, canActivate: [activateGuard]},
   { path: 'login', component: LoginComponent },
+  { path: 'producto/detalle', component: BusquedaProductoComponent, canActivate: [activateGuard]},
+  { path: 'producto/listado', component: ListadoProductoPublicoComponent},
 ];
 
 @NgModule({

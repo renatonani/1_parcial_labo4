@@ -6,6 +6,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
 
+  logeado = false;
+  
   constructor(private afAuth: AngularFireAuth) {     
   }
 

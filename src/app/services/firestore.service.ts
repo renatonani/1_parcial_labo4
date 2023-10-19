@@ -14,7 +14,7 @@ export class FirestoreService {
 
     const docRef = await addDoc(productosCollection, {
       codigo : producto.codigo,
-      descripción : producto.descripcion,
+      descripcion : producto.descripcion,
       precio : producto.precio,
       stock : producto.stock,
       paisOrigen : producto.paisOrigen,
@@ -36,6 +36,26 @@ export class FirestoreService {
       };
     });
   
+    return productoes;
+  }
+
+  async getProductosPublic()
+  {
+    const productoCollection = collection(this.firestore, 'productos');
+    const querySnapshot = await getDocs(productoCollection);
+    
+    const productoes = querySnapshot.docs
+      .filter(doc => {
+        const productoData = doc.data();
+        return productoData['stock'] > 0;
+      })
+      .map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        };
+      });
+
     return productoes;
   }
 }

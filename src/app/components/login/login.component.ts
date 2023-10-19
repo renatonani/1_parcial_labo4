@@ -38,6 +38,7 @@ export class LoginComponent {
     
         if (userCredential.user) {
           // Autenticación exitosa, redirige al usuario a la página principal
+          this.auth.logeado = true;
           this.router.navigate(['/bienvenida']);
         }     
         

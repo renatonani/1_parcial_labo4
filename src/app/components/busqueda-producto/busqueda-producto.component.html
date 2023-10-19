@@ -1,0 +1,5 @@
+<app-listado-producto (productoSeleccionadoEvent)="onProductoSeleccionado($event)"></app-listado-producto>
+<div *ngIf="productoSeleccionado" class="abajo">
+    <app-detalle-producto class="separador" [productoSeleccionado]="productoSeleccionado"></app-detalle-producto>
+    <app-pais-producto class="separador" [pais]="pais"></app-pais-producto>
+</div>

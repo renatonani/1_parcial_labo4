@@ -13,6 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
 import { PaisesComponent } from './components/paises/paises.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { PaisProductoComponent } from './components/pais-producto/pais-producto.component';
+import { ListadoProductoComponent } from './components/listado-producto/listado-producto.component';
+import { BusquedaProductoComponent } from './components/busqueda-producto/busqueda-producto.component';
+import { ListadoProductoPublicoComponent } from './components/listado-producto-publico/listado-producto-publico.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { PaisesComponent } from './components/paises/paises.component';
     LoginComponent,
     BienvenidaComponent,
     AltaProductoComponent,
-    PaisesComponent
+    PaisesComponent,
+    DetalleProductoComponent,
+    PaisProductoComponent,
+    ListadoProductoComponent,
+    BusquedaProductoComponent,
+    ListadoProductoPublicoComponent
   ],
   imports: [
     BrowserModule,
